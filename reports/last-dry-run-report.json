@@ -1,0 +1,149 @@
+{
+  "status": "dry-run",
+  "expected": {
+    "crm_companies": 15,
+    "ops_clients": 14,
+    "client_mapping": 15,
+    "account_segments": 15,
+    "crm_leads": 60,
+    "ops_projects": 40,
+    "sales_targets_forecasts": 24,
+    "campaign_mapping": 5
+  },
+  "normalization": {
+    "leads_status_normalized": 2,
+    "leads_dates_normalized": 2,
+    "leads_flagged_duplicate": 2,
+    "leads_without_crm_company": 1,
+    "leads_missing_deal_value": 3,
+    "projects_status_normalized": 2,
+    "projects_invalid_amount": 1,
+    "projects_completed_without_date": 2,
+    "ops_clients_without_mapping": 2,
+    "crm_only_companies": 3
+  },
+  "validator_summary": {
+    "counts": {
+      "crm_leads": 60,
+      "crm_companies": 15,
+      "ops_projects": 40,
+      "client_mapping": 15,
+      "sales_targets_forecasts": 24,
+      "campaign_mapping": 5,
+      "account_segments": 15
+    },
+    "expected_counts": {
+      "crm_leads": 60,
+      "crm_companies": 15,
+      "ops_projects": 40,
+      "client_mapping": 15,
+      "sales_targets_forecasts": 24,
+      "campaign_mapping": 5,
+      "account_segments": 15
+    },
+    "total_records": 174,
+    "coverage": {
+      "first_date": "2024-11-03",
+      "last_date": "2026-10-26",
+      "distinct_months_with_leads_or_projects": 24,
+      "months_in_targets_sheet": 24
+    },
+    "referential_integrity": {
+      "leads_with_valid_company_id": "59/60",
+      "projects_with_mapped_client": "35/40",
+      "crm_companies_matched_to_ops": 12,
+      "crm_companies_unmatched": 3,
+      "ops_clients_without_mapping": 2
+    },
+    "findings_total": 32,
+    "findings_intentional": 32,
+    "findings_unexpected": 0,
+    "intentional_defects_in_manifest": 32,
+    "intentional_defects_not_detected": 0,
+    "findings_by_type": {
+      "missing_required": {
+        "intentional": 8,
+        "unexpected": 0
+      },
+      "status_variant": {
+        "intentional": 4,
+        "unexpected": 0
+      },
+      "non_iso_date": {
+        "intentional": 2,
+        "unexpected": 0
+      },
+      "company_name_mismatch": {
+        "intentional": 2,
+        "unexpected": 0
+      },
+      "date_order": {
+        "intentional": 2,
+        "unexpected": 0
+      },
+      "orphan_company_id": {
+        "intentional": 1,
+        "unexpected": 0
+      },
+      "duplicate_record": {
+        "intentional": 2,
+        "unexpected": 0
+      },
+      "crm_company_unmatched": {
+        "intentional": 3,
+        "unexpected": 0
+      },
+      "sla_inconsistent": {
+        "intentional": 1,
+        "unexpected": 0
+      },
+      "unmapped_ops_client": {
+        "intentional": 5,
+        "unexpected": 0
+      },
+      "completed_date_on_open": {
+        "intentional": 1,
+        "unexpected": 0
+      },
+      "invalid_amount": {
+        "intentional": 1,
+        "unexpected": 0
+      }
+    }
+  },
+  "source_checksum": "350a8241ff976824c8e752e505d716f23841f23e63cb959d1708f69dbdde9889",
+  "source_files": {
+    "crm/crm_companies.csv": {
+      "bytes": 743,
+      "records": 15
+    },
+    "crm/crm_leads.csv": {
+      "bytes": 6595,
+      "records": 60
+    },
+    "operations/ops_projects.csv": {
+      "bytes": 3948,
+      "records": 40
+    },
+    "google-sheets/sales_targets_forecasts.csv": {
+      "bytes": 628,
+      "records": 24
+    },
+    "google-sheets/campaign_mapping.csv": {
+      "bytes": 335,
+      "records": 5
+    },
+    "google-sheets/account_segments.csv": {
+      "bytes": 417,
+      "records": 15
+    },
+    "mappings/client_mapping.csv": {
+      "bytes": 1720,
+      "records": 15
+    },
+    "defect_manifest.json": {
+      "bytes": 8517,
+      "records": 32
+    }
+  }
+}

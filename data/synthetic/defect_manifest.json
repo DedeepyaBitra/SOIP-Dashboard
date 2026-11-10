@@ -1,0 +1,298 @@
+{
+  "note": "Intentional, documented data defects injected into SYNTHETIC data so that validation and data-quality handling can be demonstrated.",
+  "seed": 20261109,
+  "window": [
+    "2024-11-01",
+    "2026-10-31"
+  ],
+  "defects": [
+    {
+      "defect_id": "D01",
+      "dataset": "crm_leads",
+      "record_id": "L-0059",
+      "field": "lead_id",
+      "type": "duplicate_record",
+      "description": "Same company, created_date, source, stage and deal_value as L-0021",
+      "intentional": true
+    },
+    {
+      "defect_id": "D02",
+      "dataset": "crm_leads",
+      "record_id": "L-0060",
+      "field": "lead_id",
+      "type": "duplicate_record",
+      "description": "Same company, created_date, source, stage and deal_value as L-0034",
+      "intentional": true
+    },
+    {
+      "defect_id": "D03",
+      "dataset": "crm_leads",
+      "record_id": "L-0001",
+      "field": "deal_value",
+      "type": "missing_required",
+      "description": "deal_value left blank",
+      "intentional": true
+    },
+    {
+      "defect_id": "D04",
+      "dataset": "crm_leads",
+      "record_id": "L-0010",
+      "field": "deal_value",
+      "type": "missing_required",
+      "description": "deal_value left blank",
+      "intentional": true
+    },
+    {
+      "defect_id": "D05",
+      "dataset": "crm_leads",
+      "record_id": "L-0018",
+      "field": "deal_value",
+      "type": "missing_required",
+      "description": "deal_value left blank",
+      "intentional": true
+    },
+    {
+      "defect_id": "D06",
+      "dataset": "crm_leads",
+      "record_id": "L-0012",
+      "field": "last_activity_date",
+      "type": "missing_required",
+      "description": "last_activity_date left blank",
+      "intentional": true
+    },
+    {
+      "defect_id": "D07",
+      "dataset": "crm_leads",
+      "record_id": "L-0037",
+      "field": "last_activity_date",
+      "type": "missing_required",
+      "description": "last_activity_date left blank",
+      "intentional": true
+    },
+    {
+      "defect_id": "D08",
+      "dataset": "crm_leads",
+      "record_id": "L-0030",
+      "field": "owner",
+      "type": "missing_required",
+      "description": "owner left blank",
+      "intentional": true
+    },
+    {
+      "defect_id": "D09",
+      "dataset": "crm_leads",
+      "record_id": "L-0017",
+      "field": "last_activity_date",
+      "type": "date_order",
+      "description": "last_activity_date earlier than created_date",
+      "intentional": true
+    },
+    {
+      "defect_id": "D10",
+      "dataset": "crm_leads",
+      "record_id": "L-0006",
+      "field": "created_date",
+      "type": "non_iso_date",
+      "description": "created_date stored as DD-Mon-YYYY (true value 2025-01-03); normalizable",
+      "intentional": true
+    },
+    {
+      "defect_id": "D11",
+      "dataset": "crm_leads",
+      "record_id": "L-0023",
+      "field": "created_date",
+      "type": "non_iso_date",
+      "description": "created_date stored as DD-Mon-YYYY (true value 2025-08-08); normalizable",
+      "intentional": true
+    },
+    {
+      "defect_id": "D12",
+      "dataset": "crm_leads",
+      "record_id": "L-0003",
+      "field": "status",
+      "type": "status_variant",
+      "description": "status written in lower case",
+      "intentional": true
+    },
+    {
+      "defect_id": "D13",
+      "dataset": "crm_leads",
+      "record_id": "L-0024",
+      "field": "status",
+      "type": "status_variant",
+      "description": "status upper case with trailing space",
+      "intentional": true
+    },
+    {
+      "defect_id": "D14",
+      "dataset": "crm_leads",
+      "record_id": "L-0032",
+      "field": "company_id",
+      "type": "orphan_company_id",
+      "description": "company_id not present in crm_companies",
+      "intentional": true
+    },
+    {
+      "defect_id": "D15",
+      "dataset": "crm_leads",
+      "record_id": "L-0007",
+      "field": "company",
+      "type": "company_name_mismatch",
+      "description": "Free-text company differs from crm_companies.company_name",
+      "intentional": true
+    },
+    {
+      "defect_id": "D16",
+      "dataset": "crm_leads",
+      "record_id": "L-0029",
+      "field": "company",
+      "type": "company_name_mismatch",
+      "description": "Free-text company differs from crm_companies.company_name",
+      "intentional": true
+    },
+    {
+      "defect_id": "D17",
+      "dataset": "client_mapping",
+      "record_id": "CRM-C013",
+      "field": "ops_client_id",
+      "type": "crm_company_unmatched",
+      "description": "CRM company has no Operations client (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D18",
+      "dataset": "client_mapping",
+      "record_id": "CRM-C014",
+      "field": "ops_client_id",
+      "type": "crm_company_unmatched",
+      "description": "CRM company has no Operations client (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D19",
+      "dataset": "client_mapping",
+      "record_id": "CRM-C015",
+      "field": "ops_client_id",
+      "type": "crm_company_unmatched",
+      "description": "CRM company has no Operations client (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D20",
+      "dataset": "ops_projects",
+      "record_id": "P-2002",
+      "field": "client_id",
+      "type": "unmapped_ops_client",
+      "description": "Operations client has no row in client_mapping (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D21",
+      "dataset": "ops_projects",
+      "record_id": "P-2006",
+      "field": "client_id",
+      "type": "unmapped_ops_client",
+      "description": "Operations client has no row in client_mapping (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D22",
+      "dataset": "ops_projects",
+      "record_id": "P-2016",
+      "field": "client_id",
+      "type": "unmapped_ops_client",
+      "description": "Operations client has no row in client_mapping (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D23",
+      "dataset": "ops_projects",
+      "record_id": "P-2024",
+      "field": "client_id",
+      "type": "unmapped_ops_client",
+      "description": "Operations client has no row in client_mapping (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D24",
+      "dataset": "ops_projects",
+      "record_id": "P-2028",
+      "field": "client_id",
+      "type": "unmapped_ops_client",
+      "description": "Operations client has no row in client_mapping (by design)",
+      "intentional": true
+    },
+    {
+      "defect_id": "D25",
+      "dataset": "ops_projects",
+      "record_id": "P-2003",
+      "field": "completed_date",
+      "type": "missing_required",
+      "description": "Completed project without completed_date",
+      "intentional": true
+    },
+    {
+      "defect_id": "D26",
+      "dataset": "ops_projects",
+      "record_id": "P-2013",
+      "field": "completed_date",
+      "type": "missing_required",
+      "description": "Completed project without completed_date",
+      "intentional": true
+    },
+    {
+      "defect_id": "D27",
+      "dataset": "ops_projects",
+      "record_id": "P-2020",
+      "field": "amount",
+      "type": "invalid_amount",
+      "description": "Negative amount",
+      "intentional": true
+    },
+    {
+      "defect_id": "D28",
+      "dataset": "ops_projects",
+      "record_id": "P-2017",
+      "field": "due_date",
+      "type": "date_order",
+      "description": "due_date earlier than created_date",
+      "intentional": true
+    },
+    {
+      "defect_id": "D29",
+      "dataset": "ops_projects",
+      "record_id": "P-2010",
+      "field": "completed_date",
+      "type": "completed_date_on_open",
+      "description": "completed_date present on a project that is not Completed",
+      "intentional": true
+    },
+    {
+      "defect_id": "D30",
+      "dataset": "ops_projects",
+      "record_id": "P-2008",
+      "field": "status",
+      "type": "status_variant",
+      "description": "status written as \"completed\"",
+      "intentional": true
+    },
+    {
+      "defect_id": "D31",
+      "dataset": "ops_projects",
+      "record_id": "P-2019",
+      "field": "status",
+      "type": "status_variant",
+      "description": "status written as \"COMPLETED \"",
+      "intentional": true
+    },
+    {
+      "defect_id": "D32",
+      "dataset": "ops_projects",
+      "record_id": "P-2001",
+      "field": "sla_status",
+      "type": "sla_inconsistent",
+      "description": "Marked Met although completed_date is after due_date",
+      "intentional": true
+    }
+  ]
+}

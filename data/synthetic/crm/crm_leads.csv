@@ -1,0 +1,61 @@
+lead_id,created_date,source,owner,company_id,company,region,pipeline_stage,deal_value,status,last_activity_date
+L-0001,2024-11-03,Website,Omar Haddad,CRM-C008,Harbor Foods,APAC,Qualified,,Open,2024-12-30
+L-0002,2024-11-21,Website,Daniel Brooks,CRM-C005,Marlow Financial,Europe,Closed Won,110800,Won,2024-12-18
+L-0003,2024-11-28,Trade Show,Sofia Rossi,CRM-C011,Ironbridge Energy,Middle East,Closed Won,72800,won,2025-01-20
+L-0004,2024-12-16,LinkedIn,Mei Lin,CRM-C007,Lumen Education,APAC,Closed Lost,65300,Lost,2025-02-17
+L-0005,2024-12-23,Referral,Asha Verma,CRM-C009,Vertex Telecom,APAC,New,104900,Open,2025-02-04
+L-0006,03-Jan-2025,Email Campaign,Daniel Brooks,CRM-C008,Harbor Foods,APAC,Negotiation,74000,Open,2025-01-26
+L-0007,2025-01-15,Email Campaign,Mei Lin,CRM-C002,Bluepeak Analytics Ltd,North America,Closed Won,46400,Won,2025-02-18
+L-0008,2025-02-02,Trade Show,Asha Verma,CRM-C001,Northwind Logistics,North America,Closed Lost,21300,Lost,2025-02-25
+L-0009,2025-02-19,Trade Show,Daniel Brooks,CRM-C012,Meridian Media,North America,Closed Won,23700,Won,2025-05-25
+L-0010,2025-02-27,LinkedIn,Mei Lin,CRM-C003,Cedar & Pine Retail,North America,Closed Won,,Won,2025-06-22
+L-0011,2025-03-11,LinkedIn,Asha Verma,CRM-C001,Northwind Logistics,North America,Closed Won,28800,Won,2025-07-02
+L-0012,2025-03-19,Website,Mei Lin,CRM-C009,Vertex Telecom,APAC,Qualified,41500,Open,
+L-0013,2025-04-06,Trade Show,Sofia Rossi,CRM-C002,Bluepeak Analytics,North America,Negotiation,14700,Open,2025-05-10
+L-0014,2025-04-20,Trade Show,Daniel Brooks,CRM-C015,Pioneer Realty,Middle East,Closed Lost,53100,Lost,2025-07-21
+L-0015,2025-05-02,Referral,Sofia Rossi,CRM-C012,Meridian Media,North America,Qualified,117900,Open,2025-05-19
+L-0016,2025-05-16,Website,Mei Lin,CRM-C010,Sunrise Hospitality,Middle East,Qualified,113300,Open,2025-07-09
+L-0017,2025-05-26,LinkedIn,Mei Lin,CRM-C001,Northwind Logistics,North America,Closed Won,61300,Won,2025-05-17
+L-0018,2025-06-05,LinkedIn,Sofia Rossi,CRM-C008,Harbor Foods,APAC,Proposal,,Open,2025-07-12
+L-0019,2025-06-19,Website,Daniel Brooks,CRM-C013,Alpine Biotech,Europe,Negotiation,81400,Open,2025-08-09
+L-0020,2025-06-29,Email Campaign,Daniel Brooks,CRM-C011,Ironbridge Energy,Middle East,Closed Won,96500,Won,2025-08-11
+L-0021,2025-07-12,Website,Mei Lin,CRM-C003,Cedar & Pine Retail,North America,Proposal,40500,Open,2025-08-12
+L-0022,2025-08-01,LinkedIn,Asha Verma,CRM-C012,Meridian Media,North America,Closed Lost,35600,Lost,2025-09-28
+L-0023,08-Aug-2025,Referral,Omar Haddad,CRM-C005,Marlow Financial,Europe,Closed Lost,41000,Lost,2025-11-12
+L-0024,2025-08-22,Trade Show,Daniel Brooks,CRM-C010,Sunrise Hospitality,Middle East,Proposal,111900,OPEN ,2025-08-23
+L-0025,2025-08-29,Email Campaign,Daniel Brooks,CRM-C006,Quanta Manufacturing,Europe,Closed Lost,15200,Lost,2025-12-25
+L-0026,2025-09-20,Website,Sofia Rossi,CRM-C014,Tidewater Shipping,APAC,New,32700,Open,2025-09-28
+L-0027,2025-09-28,Email Campaign,Asha Verma,CRM-C015,Pioneer Realty,Middle East,Closed Lost,72800,Lost,2025-12-29
+L-0028,2025-10-06,Trade Show,Asha Verma,CRM-C007,Lumen Education,APAC,Closed Lost,103700,Lost,2026-01-08
+L-0029,2025-10-27,Email Campaign,Sofia Rossi,CRM-C003,Cedar & Pine Retail Ltd,North America,Closed Lost,111900,Lost,2025-11-18
+L-0030,2025-11-01,Website,,CRM-C001,Northwind Logistics,North America,Closed Lost,21700,Lost,2026-02-14
+L-0031,2025-11-13,LinkedIn,Sofia Rossi,CRM-C002,Bluepeak Analytics,North America,New,95200,Open,2025-11-28
+L-0032,2025-11-26,Trade Show,Mei Lin,CRM-C099,Zenith Partners (unlisted),Europe,Closed Lost,25500,Lost,2026-02-03
+L-0033,2025-12-10,Website,Omar Haddad,CRM-C015,Pioneer Realty,Middle East,Closed Won,101800,Won,2026-01-28
+L-0034,2025-12-26,Email Campaign,Sofia Rossi,CRM-C006,Quanta Manufacturing,Europe,Closed Lost,110700,Lost,2026-03-30
+L-0035,2026-01-06,Website,Asha Verma,CRM-C001,Northwind Logistics,North America,Closed Won,33100,Won,2026-03-23
+L-0036,2026-01-18,Email Campaign,Sofia Rossi,CRM-C007,Lumen Education,APAC,Closed Lost,62200,Lost,2026-04-19
+L-0037,2026-02-01,LinkedIn,Asha Verma,CRM-C010,Sunrise Hospitality,Middle East,Negotiation,64900,Open,
+L-0038,2026-02-19,Trade Show,Daniel Brooks,CRM-C003,Cedar & Pine Retail,North America,Negotiation,110400,Open,2026-04-19
+L-0039,2026-02-26,Website,Daniel Brooks,CRM-C009,Vertex Telecom,APAC,Closed Won,60000,Won,2026-03-27
+L-0040,2026-03-14,Website,Sofia Rossi,CRM-C005,Marlow Financial,Europe,Proposal,33200,Open,2026-04-30
+L-0041,2026-03-23,Website,Mei Lin,CRM-C007,Lumen Education,APAC,Proposal,6800,Open,2026-05-06
+L-0042,2026-04-02,Referral,Asha Verma,CRM-C009,Vertex Telecom,APAC,Negotiation,103000,Open,2026-06-16
+L-0043,2026-04-21,Trade Show,Daniel Brooks,CRM-C001,Northwind Logistics,North America,Closed Won,8700,Won,2026-05-30
+L-0044,2026-04-30,Email Campaign,Mei Lin,CRM-C005,Marlow Financial,Europe,Closed Lost,42700,Lost,2026-07-22
+L-0045,2026-05-16,Referral,Asha Verma,CRM-C011,Ironbridge Energy,Middle East,Closed Lost,13300,Lost,2026-09-13
+L-0046,2026-05-30,Website,Mei Lin,CRM-C010,Sunrise Hospitality,Middle East,Proposal,50000,Open,2026-07-24
+L-0047,2026-06-09,Trade Show,Daniel Brooks,CRM-C015,Pioneer Realty,Middle East,Negotiation,111800,Open,2026-06-22
+L-0048,2026-06-15,LinkedIn,Mei Lin,CRM-C007,Lumen Education,APAC,Closed Won,43000,Won,2026-10-06
+L-0049,2026-07-07,Website,Sofia Rossi,CRM-C005,Marlow Financial,Europe,Qualified,103300,Open,2026-08-14
+L-0050,2026-07-10,Website,Mei Lin,CRM-C008,Harbor Foods,APAC,Qualified,32600,Open,2026-08-23
+L-0051,2026-07-29,Email Campaign,Sofia Rossi,CRM-C014,Tidewater Shipping,APAC,Proposal,70000,Open,2026-08-06
+L-0052,2026-08-04,Email Campaign,Sofia Rossi,CRM-C007,Lumen Education,APAC,Negotiation,53500,Open,2026-09-22
+L-0053,2026-08-21,Website,Daniel Brooks,CRM-C001,Northwind Logistics,North America,Negotiation,84800,Open,2026-10-25
+L-0054,2026-09-07,LinkedIn,Omar Haddad,CRM-C008,Harbor Foods,APAC,New,32200,Open,2026-10-18
+L-0055,2026-09-19,Email Campaign,Daniel Brooks,CRM-C004,Orbit Health Systems,Europe,Proposal,13500,Open,2026-10-10
+L-0056,2026-09-28,Referral,Asha Verma,CRM-C011,Ironbridge Energy,Middle East,New,72900,Open,2026-10-26
+L-0057,2026-10-07,Email Campaign,Mei Lin,CRM-C006,Quanta Manufacturing,Europe,Negotiation,110700,Open,2026-10-14
+L-0058,2026-10-26,Website,Daniel Brooks,CRM-C003,Cedar & Pine Retail,North America,Negotiation,25100,Open,2026-10-29
+L-0059,2025-07-12,Website,Mei Lin,CRM-C003,Cedar & Pine Retail,North America,Proposal,40500,Open,2025-08-12
+L-0060,2025-12-26,Email Campaign,Sofia Rossi,CRM-C006,Quanta Manufacturing,Europe,Closed Lost,110700,Lost,2026-03-30

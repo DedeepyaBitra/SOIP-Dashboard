@@ -1,0 +1,41 @@
+project_id,client_id,status,service_type,created_date,due_date,completed_date,amount,assigned_team,sla_status
+P-2001,OPS-CL-107,Completed,Training,2024-11-05,2025-01-07,2025-01-15,74200,Team Bravo,Met
+P-2002,OPS-CL-114,Cancelled,Consulting,2024-11-29,2025-02-13,,57300,Team Delta,N/A
+P-2003,OPS-CL-103,Completed,Implementation,2024-12-11,2025-03-02,,81700,Team Bravo,Breached
+P-2004,OPS-CL-110,In Progress,Implementation,2024-12-26,2025-02-17,,30900,Team Delta,Breached
+P-2005,OPS-CL-108,Completed,Support Retainer,2025-01-20,2025-03-31,2025-03-26,56700,Team Charlie,Met
+P-2006,OPS-CL-113,Completed,Consulting,2025-02-05,2025-04-16,2025-04-01,76200,Team Bravo,Met
+P-2007,OPS-CL-111,Completed,Training,2025-02-28,2025-05-04,2025-04-30,30500,Team Charlie,Met
+P-2008,OPS-CL-104,completed,Implementation,2025-03-07,2025-04-18,2025-05-05,56500,Team Charlie,Breached
+P-2009,OPS-CL-109,Cancelled,Implementation,2025-03-24,2025-06-07,,18700,Team Charlie,N/A
+P-2010,OPS-CL-102,In Progress,Implementation,2025-04-14,2025-05-24,2025-05-04,62400,Team Bravo,Breached
+P-2011,OPS-CL-101,Completed,Consulting,2025-04-30,2025-06-30,2025-06-28,8600,Team Delta,Met
+P-2012,OPS-CL-103,Completed,Support Retainer,2025-05-26,2025-07-28,2025-07-15,73900,Team Charlie,Met
+P-2013,OPS-CL-109,Completed,Data Migration,2025-06-13,2025-08-12,,63400,Team Delta,Breached
+P-2014,OPS-CL-112,Completed,Training,2025-06-25,2025-10-13,2025-10-09,57600,Team Bravo,Met
+P-2015,OPS-CL-103,Completed,Training,2025-07-18,2025-08-25,2025-08-23,26700,Team Alpha,Met
+P-2016,OPS-CL-114,Completed,Support Retainer,2025-08-01,2025-09-12,2025-09-09,64300,Team Delta,Met
+P-2017,OPS-CL-102,In Progress,Consulting,2025-08-20,2025-08-08,,49300,Team Charlie,Breached
+P-2018,OPS-CL-103,Completed,Consulting,2025-09-11,2025-10-22,2025-10-24,64000,Team Bravo,Breached
+P-2019,OPS-CL-104,COMPLETED ,Implementation,2025-09-26,2025-11-12,2025-11-07,15900,Team Alpha,Met
+P-2020,OPS-CL-104,Completed,Implementation,2025-10-10,2026-02-06,2026-02-07,-81800,Team Bravo,Breached
+P-2021,OPS-CL-109,Completed,Data Migration,2025-11-05,2026-01-28,2026-01-22,16000,Team Bravo,Met
+P-2022,OPS-CL-105,Completed,Data Migration,2025-11-22,2025-12-23,2026-01-05,67200,Team Delta,Breached
+P-2023,OPS-CL-108,Completed,Implementation,2025-12-08,2026-02-03,2026-02-13,40000,Team Delta,Breached
+P-2024,OPS-CL-113,Completed,Implementation,2025-12-28,2026-04-16,2026-04-19,7600,Team Charlie,Breached
+P-2025,OPS-CL-110,Completed,Consulting,2026-01-15,2026-02-27,2026-03-01,49400,Team Delta,Breached
+P-2026,OPS-CL-103,Completed,Consulting,2026-02-05,2026-03-16,2026-03-30,11100,Team Alpha,Breached
+P-2027,OPS-CL-103,In Progress,Consulting,2026-02-21,2026-04-04,,15200,Team Charlie,Breached
+P-2028,OPS-CL-114,Completed,Data Migration,2026-03-03,2026-05-04,2026-05-14,69900,Team Delta,Breached
+P-2029,OPS-CL-109,Completed,Consulting,2026-03-26,2026-05-11,2026-05-03,8700,Team Charlie,Met
+P-2030,OPS-CL-109,Completed,Training,2026-04-06,2026-07-14,2026-07-30,45800,Team Bravo,Breached
+P-2031,OPS-CL-104,Completed,Data Migration,2026-04-26,2026-06-03,2026-06-15,26900,Team Alpha,Breached
+P-2032,OPS-CL-105,Completed,Implementation,2026-05-22,2026-08-10,2026-08-06,64400,Team Charlie,Met
+P-2033,OPS-CL-108,Completed,Data Migration,2026-06-03,2026-08-15,2026-08-23,41300,Team Bravo,Breached
+P-2034,OPS-CL-112,In Progress,Support Retainer,2026-06-17,2026-08-03,,6900,Team Charlie,Breached
+P-2035,OPS-CL-109,Completed,Training,2026-07-15,2026-10-04,2026-10-01,72200,Team Alpha,Met
+P-2036,OPS-CL-103,In Progress,Implementation,2026-08-02,2026-11-03,,72300,Team Charlie,At Risk
+P-2037,OPS-CL-111,Not Started,Training,2026-08-20,2026-12-04,,33600,Team Bravo,On Track
+P-2038,OPS-CL-106,Completed,Implementation,2026-08-31,2026-10-10,2026-10-03,63500,Team Alpha,Met
+P-2039,OPS-CL-109,In Progress,Implementation,2026-09-22,2026-12-25,,66700,Team Bravo,On Track
+P-2040,OPS-CL-111,On Hold,Consulting,2026-10-04,2026-11-13,,71600,Team Charlie,On Track

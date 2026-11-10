@@ -1,0 +1,16 @@
+company_id,company_name,industry,region
+CRM-C001,Northwind Logistics,Logistics,North America
+CRM-C002,Bluepeak Analytics,Technology,North America
+CRM-C003,Cedar & Pine Retail,Retail,North America
+CRM-C004,Orbit Health Systems,Healthcare,Europe
+CRM-C005,Marlow Financial,Financial Services,Europe
+CRM-C006,Quanta Manufacturing,Manufacturing,Europe
+CRM-C007,Lumen Education,Education,APAC
+CRM-C008,Harbor Foods,Food & Beverage,APAC
+CRM-C009,Vertex Telecom,Telecom,APAC
+CRM-C010,Sunrise Hospitality,Hospitality,Middle East
+CRM-C011,Ironbridge Energy,Energy,Middle East
+CRM-C012,Meridian Media,Media,North America
+CRM-C013,Alpine Biotech,Healthcare,Europe
+CRM-C014,Tidewater Shipping,Logistics,APAC
+CRM-C015,Pioneer Realty,Real Estate,Middle East

@@ -1,0 +1,32 @@
+{
+  "name": "soip-sales-operations-intelligence",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Sales & Operations Intelligence Dashboard - synthetic data prototype",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "echo \"No linter configured yet (see docs/ROADMAP.md)\"",
+    "data:generate": "node scripts/generate-data.js",
+    "data:validate": "node scripts/validate-data.js",
+    "data:import": "node scripts/import-data.js",
+    "data:import:dry": "node scripts/import-data.js --dry-run",
+    "data:emit-sql": "node scripts/import-data.js --emit-sql",
+    "test:import": "node --test scripts/test-import.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.3.1"
+  }
+}

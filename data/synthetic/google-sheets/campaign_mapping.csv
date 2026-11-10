@@ -1,0 +1,6 @@
+campaign_id,campaign_name,lead_source,channel,manual_category
+CMP-01,Website Organic & SEO,Website,Digital,Inbound
+CMP-02,Customer Referral Program,Referral,Partner,Referral
+CMP-03,LinkedIn Outreach,LinkedIn,Social,Outbound
+CMP-04,Industry Trade Shows,Trade Show,Events,Events
+CMP-05,Nurture Email Series,Email Campaign,Email,Outbound

@@ -1,0 +1,16 @@
+canonical_client_id,crm_company_id,crm_company_name,ops_client_id,ops_client_name,match_method,match_status,notes
+CL-001,CRM-C001,Northwind Logistics,OPS-CL-101,Northwind Logistics Inc,normalized_name,matched,
+CL-002,CRM-C002,Bluepeak Analytics,OPS-CL-102,Bluepeak Analytics LLC,normalized_name,matched,
+CL-003,CRM-C003,Cedar & Pine Retail,OPS-CL-103,Cedar and Pine Retail,manual_review,matched,Name differs after normalization; confirmed by account manager (synthetic)
+CL-004,CRM-C004,Orbit Health Systems,OPS-CL-104,Orbit Health Systems GmbH,normalized_name,matched,
+CL-005,CRM-C005,Marlow Financial,OPS-CL-105,Marlow Financial Group,normalized_name,matched,
+CL-006,CRM-C006,Quanta Manufacturing,OPS-CL-106,Quanta Manufacturing,normalized_name,matched,
+CL-007,CRM-C007,Lumen Education,OPS-CL-107,Lumen Education Pte,manual_review,matched,Name differs after normalization; confirmed by account manager (synthetic)
+CL-008,CRM-C008,Harbor Foods,OPS-CL-108,Harbor Foods Co,manual_review,matched,Name differs after normalization; confirmed by account manager (synthetic)
+CL-009,CRM-C009,Vertex Telecom,OPS-CL-109,Vertex Telecom,normalized_name,matched,
+CL-010,CRM-C010,Sunrise Hospitality,OPS-CL-110,Sunrise Hospitality LLC,normalized_name,matched,
+CL-011,CRM-C011,Ironbridge Energy,OPS-CL-111,Ironbridge Energy,normalized_name,matched,
+CL-012,CRM-C012,Meridian Media,OPS-CL-112,Meridian Media Group,manual_review,matched,Name differs after normalization; confirmed by account manager (synthetic)
+CL-013,CRM-C013,Alpine Biotech,,,none,crm_only,No Operations client found
+CL-014,CRM-C014,Tidewater Shipping,,,none,crm_only,No Operations client found
+CL-015,CRM-C015,Pioneer Realty,,,none,crm_only,No Operations client found

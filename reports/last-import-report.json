@@ -1,0 +1,103 @@
+{
+  "status": "success",
+  "started_at": "2026-11-09T11:58:36.083Z",
+  "finished_at": "2026-11-09T11:58:41.388Z",
+  "run_id": "457b28bc-7666-4e89-abf2-60529e8fdffa",
+  "counts_before": {
+    "crm_leads": 0,
+    "ops_clients": 0,
+    "ops_projects": 0,
+    "crm_companies": 0,
+    "client_mapping": 0,
+    "account_segments": 0,
+    "campaign_mapping": 0,
+    "sales_targets_forecasts": 0
+  },
+  "counts_after": {
+    "crm_leads": 60,
+    "ops_clients": 14,
+    "ops_projects": 40,
+    "crm_companies": 15,
+    "client_mapping": 15,
+    "account_segments": 15,
+    "campaign_mapping": 5,
+    "sales_targets_forecasts": 24
+  },
+  "row_stats": {
+    "crm_leads": {
+      "updated": 0,
+      "inserted": 60
+    },
+    "ops_clients": {
+      "updated": 0,
+      "inserted": 14
+    },
+    "ops_projects": {
+      "updated": 0,
+      "inserted": 40
+    },
+    "crm_companies": {
+      "updated": 0,
+      "inserted": 15
+    },
+    "client_mapping": {
+      "updated": 0,
+      "inserted": 15
+    },
+    "account_segments": {
+      "updated": 0,
+      "inserted": 15
+    },
+    "campaign_mapping": {
+      "updated": 0,
+      "inserted": 5
+    },
+    "deleted_crm_leads": 0,
+    "deleted_ops_clients": 0,
+    "deleted_ops_projects": 0,
+    "deleted_crm_companies": 0,
+    "deleted_client_mapping": 0,
+    "sales_targets_forecasts": {
+      "updated": 0,
+      "inserted": 24
+    },
+    "deleted_account_segments": 0,
+    "deleted_campaign_mapping": 0,
+    "deleted_sales_targets_forecasts": 0
+  },
+  "dq_findings_total": 32,
+  "dq_unexpected": 0,
+  "expected": {
+    "crm_companies": 15,
+    "ops_clients": 14,
+    "client_mapping": 15,
+    "account_segments": 15,
+    "crm_leads": 60,
+    "ops_projects": 40,
+    "sales_targets_forecasts": 24,
+    "campaign_mapping": 5
+  },
+  "verified_counts": {
+    "crm_companies": 15,
+    "crm_leads": 60,
+    "ops_clients": 14,
+    "ops_projects": 40,
+    "client_mapping": 15,
+    "sales_targets_forecasts": 24,
+    "campaign_mapping": 5,
+    "account_segments": 15
+  },
+  "mismatches": [],
+  "normalization": {
+    "leads_status_normalized": 2,
+    "leads_dates_normalized": 2,
+    "leads_flagged_duplicate": 2,
+    "leads_without_crm_company": 1,
+    "leads_missing_deal_value": 3,
+    "projects_status_normalized": 2,
+    "projects_invalid_amount": 1,
+    "projects_completed_without_date": 2,
+    "ops_clients_without_mapping": 2,
+    "crm_only_companies": 3
+  }
+}
