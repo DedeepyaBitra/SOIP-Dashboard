@@ -1,134 +1,212 @@
 # SOIP — Sales & Operations Intelligence Platform
 
-SOIP is a prototype business-intelligence dashboard prepared for the Braahmam International Limited assignment. It brings synthetic CRM, operations and reference-sheet data into one place so a reviewer can explore sales performance, operational delivery, client matching, data quality and AI-assisted observations.
+SOIP is a browser-based business intelligence prototype that brings sales, operations, client-mapping, and data-quality information into one dashboard. It was developed as a time-boxed assignment prototype using **synthetic data only**.
 
-> **Prototype status (10 November 2026):** The five-page React dashboard, Supabase-backed data layer and Gemini-powered AI Analyst have been implemented. Synthetic data has been imported into Supabase and the AI Analyst Edge Function has been deployed and tested by the project owner. A production build has been run by the project owner. Vercel deployment, final hosted smoke testing, GitHub publication and the final demo recording are still submission steps, not claimed as completed here.
+> **Prototype notice:** SOIP is not connected to Braahmam's live CRM, operations systems, Google Sheets, or other company data. It is not a production-ready application.
 
-## Dashboard pages
+## Project links
 
-1. **Overview** — cross-functional KPI summary and rule-based business insight.
-2. **Sales Intelligence** — lead trends and distributions, pipeline measures, stale leads and follow-up records.
-3. **Operations Intelligence** — project volume, status, service/team workload, overdue and at-risk work.
-4. **Client Intelligence** — matched sales-to-operations client view and unmatched records.
-5. **Data Health** — source-table counts, refresh status and data-quality findings.
+- **GitHub repository:** https://github.com/DedeepyaBitra/SOIP-Dashboard
+- **Live dashboard:** https://soip-dashboard.vercel.app/
+- **Demo video:** https://drive.google.com/file/d/1aBFRiafLb6_cBcv_UuqoxwmjzkK7vurJ/view?usp=drivesdk
 
-The top-right **AI Analyst** opens a drawer for an AI-assisted analysis of the selected page. The frontend sends aggregated synthetic metrics to a Supabase Edge Function; the function calls the configured Gemini API model. The API key is kept server-side in Supabase secrets. The feature is user-triggered, not an automatic background call. A rule-based insight remains available on the Overview page.
+## What the prototype demonstrates
 
-## Technology stack
+The dashboard contains five areas:
 
-- React 18, JavaScript and Vite
-- Tailwind CSS and project CSS
-- Recharts for charts
-- Supabase PostgreSQL and `@supabase/supabase-js`
-- Supabase Edge Functions (Deno/TypeScript) for the AI Analyst server-side request
-- Gemini API for AI-assisted analysis
-- Node.js scripts for deterministic synthetic-data generation, validation and import
-- Vercel as the intended static frontend hosting platform
+1. **Overview** — a cross-functional summary of sales and operations KPIs.
+2. **Sales Intelligence** — lead trends and distributions, pipeline measures, and stale-lead follow-up information.
+3. **Operations Intelligence** — project status, workload, overdue and at-risk project information.
+4. **Client Intelligence** — comparison of CRM companies and operations clients using a canonical mapping table, with unmatched records kept visible.
+5. **Data Health** — source-table counts, refresh information, and validation findings.
 
-## Data scope
+The prototype also includes an **AI Analyst**. The frontend sends aggregated synthetic metrics to a Supabase Edge Function, which calls the Gemini API and returns a structured analysis. The AI feature is advisory; its output should be checked against the visible dashboard evidence.
 
-All records are synthetic. The prototype does not connect to a live CRM, operations platform or Google Sheets account. The source datasets contain 174 records across leads, companies, projects, mappings, targets, campaigns and account segments. The Supabase normalized schema contains 188 rows across its eight business/reference tables at the last recorded import, plus refresh and quality metadata tables.
+## Technology stack and rationale
 
-The data includes deliberately injected quality issues so that validation, normalization, unmatched-record handling and dashboard transparency can be demonstrated. The latest documented validation result is 32 intentional findings and zero unexpected findings. See [DATA_QUALITY.md](docs/DATA_QUALITY.md).
+| Technology | Role in SOIP | Rationale |
+|---|---|---|
+| React | Dashboard UI | Component-based structure for dashboard pages and reusable interface elements. |
+| Vite | Frontend tooling and build | Provides the development server and production build for the React application. |
+| Recharts | Charts and visualizations | Renders sales and operations charts within the dashboard. |
+| Supabase PostgreSQL | Database | Stores normalized source data, mapping/reference data, views, and refresh/quality metadata. |
+| Supabase JS client | Browser data access | Lets the frontend read dashboard data using public client credentials and database policies. |
+| Node.js import script | Data validation and ingestion | Runs repeatable source-file validation, transformation, and import from a trusted local environment. |
+| Supabase Edge Functions | Server-side AI endpoint | Keeps the Gemini API key on the server side rather than in the browser bundle. |
+| Gemini API | AI-assisted analysis | Produces structured, advisory insights from aggregated synthetic metrics. |
+| Vercel | Frontend hosting | Hosts the Vite production build. |
 
-All amounts are USD. The dataset as-of date used by stale/overdue logic is 31 October 2026. See [ASSUMPTIONS.md](docs/ASSUMPTIONS.md) and [KPI_DEFINITIONS.md](docs/KPI_DEFINITIONS.md).
+## Data and modelling
 
-## Run locally
+The project uses synthetic CSV/JSON source files under `data/synthetic/`. The source representations include CRM, operations, and spreadsheet-style reference data.
 
-Requirements: Node.js 18.18+ (20 LTS recommended) and npm 9+.
+The import process validates and transforms source records before loading normalized data into Supabase PostgreSQL. Cross-system client matching uses a canonical mapping table; CRM company IDs and operations client IDs are treated as separate identifier namespaces. Unmatched records remain visible rather than being silently force-matched.
+
+The synthetic data includes deliberately injected defects documented in the defect manifest. These findings demonstrate data-quality validation and reporting.
+
+## Architecture at a glance
+
+```text
+Synthetic CSV / JSON files
+          |
+          v
+Node.js validation + transformation + importer
+          |
+          v
+Supabase PostgreSQL
+  - normalized source tables
+  - mapping/reference tables
+  - KPI and reconciliation views
+  - refresh and quality metadata
+          |
+          v
+React + Vite dashboard on Vercel
+  - Overview
+  - Sales Intelligence
+  - Operations Intelligence
+  - Client Intelligence
+  - Data Health
+
+React AI Analyst
+          |
+          v
+Supabase Edge Function
+          |
+          v
+Gemini API
+          |
+          v
+Structured advisory analysis in the dashboard
+```
+
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for detailed request flows and security boundaries.
+
+## Local setup
+
+### Prerequisites
+
+- Node.js and npm
+- Access to the SOIP Supabase project for the configured database
+- Supabase CLI only if you need to apply migrations or deploy the Edge Function
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/DedeepyaBitra/SOIP-Dashboard.git
+cd SOIP-Dashboard
+```
+
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-Create a local `.env` file based on `.env.example` and set the two browser-safe Supabase values:
+### 3. Configure browser environment variables
+
+Create a local `.env` file using `.env.example` as the template:
 
 ```env
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-public-anon-key
 ```
 
-Then start the development server:
+Use the actual project URL and public anon/publishable key from Supabase project settings. Do not commit `.env`.
+
+### 4. Run the dashboard locally
 
 ```bash
 npm run dev
 ```
 
-Vite prints the local URL (commonly `http://localhost:5173`).
+Vite prints the local development URL in the terminal.
 
-To create a production build:
+### 5. Build the frontend
 
 ```bash
 npm run build
-npm run preview
 ```
 
-Do not put `SUPABASE_SERVICE_ROLE_KEY` or `GEMINI_API_KEY` in any `VITE_` variable or frontend file.
+The production build is generated in `dist/`.
 
-## Data scripts
+## Synthetic data import
+
+The source files are in `data/synthetic/`. The project provides validation/import scripts.
+
+To validate without importing:
 
 ```bash
-npm run data:generate    # generate deterministic synthetic source files if absent
-npm run data:validate    # validate source files and intentional defects
-npm run data:import:dry  # transform and validate without writing to Supabase
-npm run data:import      # import/refresh using server-side service-role credentials
-npm run data:emit-sql    # generate SQL seed payload
-npm run test:import      # run the offline importer tests
+npm run data:import:dry
 ```
 
-The import command requires `SUPABASE_URL` (or the documented URL fallback) and `SUPABASE_SERVICE_ROLE_KEY` in the trusted local environment. Never expose the service-role key in the browser or commit it. See [IMPORT_AND_REFRESH.md](docs/IMPORT_AND_REFRESH.md).
+To run the import from a trusted local environment, configure these server-side variables locally:
+
+```env
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```
+
+Then run:
+
+```bash
+npm run data:import
+```
+
+**Security:** `SUPABASE_SERVICE_ROLE_KEY` is privileged. Never expose it in frontend code, prefix it with `VITE_`, commit it to Git, or add it to Vercel as a browser-facing variable. Keep it only in a trusted local/server-side environment. The browser uses the public anon/publishable key and database policies.
 
 ## AI Analyst configuration
 
-The AI Analyst is implemented as a Supabase Edge Function named `ai-analyst`. The browser calls the function through the Supabase client; the Edge Function reads `GEMINI_API_KEY` and optionally `GEMINI_MODEL` from Supabase secrets. The configured model in the current implementation defaults to `gemini-2.5-flash`.
+The AI Analyst is implemented as the Supabase Edge Function `ai-analyst` under `supabase/functions/ai-analyst/`.
 
-The model receives aggregated synthetic metrics rather than individual CRM or project records. The response includes a headline, summary, findings, evidence, recommendations and caveats. Availability depends on the Gemini API project's quota and service status. If the AI service is unavailable, the dashboard's non-AI functionality and Overview rule-based insight remain available.
+Configure the Gemini API key as a Supabase Edge Function secret, not as a Vite frontend variable:
 
-See [SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md) for deployment configuration and [ARCHITECTURE.md](docs/ARCHITECTURE.md) for the request flow.
-
-## Repository layout
-
-```text
-.
-├── data/synthetic/             # Synthetic CRM, operations and reference CSV/JSON
-├── docs/                       # Architecture, data dictionary, KPI and setup documentation
-├── reports/                    # Generated validation/import reports
-├── scripts/                    # Data generation, validation, transformation and import
-├── src/
-│   ├── components/             # Dashboard UI components
-│   ├── hooks/                  # Data-loading hooks
-│   ├── lib/                    # Supabase browser client
-│   ├── services/               # Data access and KPI services
-│   └── styles/                 # Dashboard styles
-├── supabase/
-│   ├── functions/ai-analyst/    # Server-side AI Analyst Edge Function
-│   ├── migrations/              # PostgreSQL schema, views, import and security
-│   └── seed/                    # Synthetic seed SQL
-└── package.json
+```bash
+npx supabase secrets set GEMINI_API_KEY=your-gemini-api-key
 ```
+
+The function supports `GEMINI_MODEL`; the documented default in the current implementation is `gemini-2.5-flash` when that variable is not configured.
+
+Deploy the function with:
+
+```bash
+npx supabase functions deploy ai-analyst
+```
+
+AI availability depends on provider availability and quota. The dashboard should remain usable if an AI request fails.
+
+## Deployment
+
+The Vite frontend has been deployed to Vercel and is connected to the GitHub repository. Configure these browser variables in the Vercel project:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+The AI secret belongs in Supabase Edge Function secrets. Do not put `GEMINI_API_KEY` or `SUPABASE_SERVICE_ROLE_KEY` in the frontend environment.
+
+After changing environment variables or frontend code, redeploy the Vercel project. Perform a hosted smoke test after deployment to verify page loading, database reads, filters, and the AI Analyst (subject to API quota).
 
 ## Documentation
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [Database design](docs/DATABASE.md)
-- [Data dictionary](docs/DATA_DICTIONARY.md)
-- [KPI definitions](docs/KPI_DEFINITIONS.md)
-- [Data quality](docs/DATA_QUALITY.md)
-- [Assumptions and limitations](docs/ASSUMPTIONS.md)
-- [Import and refresh](docs/IMPORT_AND_REFRESH.md)
-- [Supabase setup and deployment](docs/SUPABASE_SETUP.md)
-- [Test report](docs/TEST_REPORT.md)
-- [Production roadmap](docs/ROADMAP.md)
+The `docs/` folder contains the supporting project documentation:
 
-## Security and limitations
+- `ARCHITECTURE.md` — frontend, database, import, AI, and deployment architecture.
+- `DATA_DICTIONARY.md` — source datasets, fields, keys, and relationships.
+- `KPI_DEFINITIONS.md` — KPI formulas, denominators, and limitations.
+- `DATA_QUALITY.md` — validation rules, intentional defects, and handling.
+- `ASSUMPTIONS.md` — scope, date, currency, mapping, and known limitations.
+- `DATABASE.md` — database tables, views, relationships, and security.
+- `IMPORT_AND_REFRESH.md` — repeatable source-data import procedure.
+- `SUPABASE_SETUP.md` — environment variables, migrations, Edge Function, and hosting setup.
+- `TEST_REPORT.md` — recorded tests and remaining verification.
+- `ROADMAP.md` — production-readiness work beyond the prototype.
 
-- Synthetic data only; no real client or company records are included.
-- The Supabase anon key is intended for browser use and is protected by the project's read policies. Because the dataset is synthetic and the prototype has no user authentication, the current read access is not suitable for confidential production data.
-- Service-role and Gemini API keys are server-side secrets and must never be committed.
-- No production CRM/operations/Google Sheets connectors, user roles, tenant isolation, audit trail, formal retention policy or production monitoring are implemented.
-- KPI rates are illustrative because the sample is small. Some metrics use cohort dates or explicit assumptions because close-date/stage-history data is not present.
-- AI output is advisory and must be checked against the displayed evidence; it is not a forecast or a substitute for business review.
+## Known limitations and production considerations
 
-## Assignment deliverables
+- The prototype uses synthetic data only and has no live source-system integrations.
+- The dataset is small and illustrative; rates and distributions should not be treated as real business performance.
+- Some metrics are limited by available synthetic fields and documented cohort/date assumptions.
+- The prototype does not implement production authentication, role-based access, tenant isolation, audit, retention, or full operational monitoring.
+- AI analysis is advisory, provider-dependent, and subject to API quota and latency.
+- Production use would require real integrations, stronger identity/matching rules, security and access controls, monitoring, testing, governance, and operational ownership.
 
-The project submission should include the deployed dashboard URL, Git repository URL, a 3–5 minute screen-recorded demo link and this documentation. The hosted URL and demo link should be added to the final submission message once deployment and recording are complete.
+See [`docs/ASSUMPTIONS.md`](docs/ASSUMPTIONS.md) and [`docs/ROADMAP.md`](docs/ROADMAP.md) for details.

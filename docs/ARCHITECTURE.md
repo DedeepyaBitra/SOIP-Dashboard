@@ -93,8 +93,26 @@ The current function defaults to `gemini-2.5-flash` when `GEMINI_MODEL` is not c
 - AI receives aggregated metrics, not individual lead or project records.
 - AI findings are advisory and should cite visible evidence; possible explanations must not be presented as proven causes.
 
-## 7. Deployment topology
+## 7. Deployment topology and current status
 
-The intended deployment is a static Vite frontend on Vercel, connected to the existing Supabase project. The `ai-analyst` Edge Function is deployed in Supabase. Configure the two `VITE_` variables in Vercel for the browser build. Keep `GEMINI_API_KEY` and service-role credentials in Supabase/local server-side secrets only.
+The frontend is deployed to Vercel from the GitHub repository. The Vercel project uses the following browser environment variables:
 
-The Vercel deployment and final hosted smoke test are pending at the time this document was prepared.
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+The `ai-analyst` Edge Function is deployed in Supabase. `GEMINI_API_KEY` and optional `GEMINI_MODEL` are stored as Supabase Edge Function secrets. The service-role credential is reserved for trusted server-side/local import operations and is not included in the browser build.
+
+The GitHub repository contains the source code and project documentation. A screen-recorded dashboard demonstration has also been prepared for the assignment submission.
+
+**Verification note:** Vercel deployment has completed. Before final submission, perform and record a hosted smoke test covering page loading, Supabase data reads, filters, and the AI Analyst. AI availability remains subject to provider quota and service availability.
+
+## 8. Technology choices
+
+- **React + Vite:** component-based dashboard development and a straightforward static production build.
+- **Recharts:** dashboard chart rendering.
+- **Supabase PostgreSQL:** relational storage for normalized source records, mappings, views, and refresh/quality metadata.
+- **Supabase JS client:** browser access using the public anon key and database policies.
+- **Node.js importer:** repeatable validation, transformation, and privileged data loading from a trusted environment.
+- **Supabase Edge Functions:** server-side boundary for the AI request and provider secret.
+- **Gemini API:** AI-assisted analysis of aggregated synthetic metrics.
+- **Vercel:** hosting for the Vite frontend and integration with the GitHub repository.
